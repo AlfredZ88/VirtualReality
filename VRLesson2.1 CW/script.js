@@ -1,3 +1,8 @@
+function rnd(l, u){
+  return Math.floor(Math.random()*(u-l) + l);
+}
+
+
 window.addEventListener("DOMContentLoaded",function() {
   //Challenge 1: Create a variable scene for the <a-scene> component in the HTML
     let scene = document.querySelector("a-scene");
@@ -18,5 +23,21 @@ window.addEventListener("DOMContentLoaded",function() {
   2) Change each <a-dodecahedron>'s position to a random x, y, and z location
   3) Change each <a-dodecahedron>'s to a random color.  Hint: Use rgb( ) and string interpolation
   */
- 
+
+  function createDode(x, y, z){
+    let entity = document.createElement("a-entity");
+
+    let dodecahedron = document.createElement("a-dodecahedron");
+    entity.append(dodecahedron);
+    entity.setAttribute("position",{x:x, y:y, z:z});
+    scene.append( entity );
+  }
+
+
+    for(let i = 0; i < 30; i++){
+      let x = rnd(-20,20);
+      let y = rnd(-20,20);
+      let z = rnd(-20,20);
+      createDode(x, y, z);
+  }
 })
