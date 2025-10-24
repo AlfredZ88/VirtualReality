@@ -1,5 +1,5 @@
 let rnd = (l,u) => Math.floor(Math.random()*(u-l) + l);
-let scene, snowmen = [ ];
+let scene, snowmen, clouds = [ ];
 
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene"); //CSS Selector
@@ -18,9 +18,15 @@ window.addEventListener("DOMContentLoaded",function() {
     snowmen.push(snowman);
   }
 
-  //Challenge 1: Create an array to store 20 clouds in random positions
-  cloud = new Cloud(-5,10,-1);
 
+
+  //Challenge 1: Create an array to store 20 clouds in random positions
+  for(let i = 0; i < 20; i++){
+    let x = rnd(-20,20);
+    let z = rnd(-20,20);
+    let clouds = new Cloud(x, 10, z);
+    clouds.push(clouds);
+  }
   //Challenge 3: Create an array to store 100 snowflakes in random positions
 
   loop();
