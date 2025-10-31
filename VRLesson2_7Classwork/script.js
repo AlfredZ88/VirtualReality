@@ -1,5 +1,6 @@
 let rnd = (l,u) => Math.floor(Math.random()*(u-l) + l);
 let scene, dudeTemplate;
+let dudes = [];
 
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
@@ -9,15 +10,15 @@ window.addEventListener("DOMContentLoaded",function() {
   for(let i=0; i < 20; i++){
     let x = rnd(-20,20);
     let z = rnd(-20,20);
-    let dude = new Dude(x, 0, z);
-    dudeTemplate.push( dude );
+    let d = new Dude(x, 1, z);
+    dudes.push( d );
   }
   loop();  
 })
 function loop(){
   //Challenge 5: Make all the dudes jump.
-  for(let dude of dudeTemplate){
-    dude.jump();
+  for(let d of dudes){
+    d.jump();
   }
   window.requestAnimationFrame( loop );
 }
