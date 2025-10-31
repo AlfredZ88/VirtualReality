@@ -6,11 +6,18 @@ window.addEventListener("DOMContentLoaded",function() {
   dudeTemplate = document.querySelector("#dudeTemplate");
 
   //Challenge 4: Create an array of dudes at random locations.
-  
+  for(let i=0; i < 20; i++){
+    let x = rnd(-20,20);
+    let z = rnd(-20,20);
+    let dude = new Dude(x, 0, z);
+    dudeTemplate.push( dude );
+  }
   loop();  
 })
 function loop(){
   //Challenge 5: Make all the dudes jump.
-  
+  for(let dude of dudeTemplate){
+    dude.jump();
+  }
   window.requestAnimationFrame( loop );
 }
