@@ -39,12 +39,17 @@ let maze = [
 /* Challenge 2
    Add appropriate classes to use as objects in your map.  Choose characters to represent these objects and position them on the map.   In Challenge 5 and 6, you will generate the map using the character representation of the objects you chose to place in the world. Get Creative!
 */
+
 let rnd = (l,u) => Math.floor(Math.random()*(u-l) + l);
 let scene;
 let ufos = [];
+let mechs = [];
 
 window.addEventListener("DOMContentLoaded",function() {
+  mech = document.getElementById("mech-1");
   scene = document.querySelector("a-scene");
+
+
   for(let r = 0; r < maze.length; r++){
     let row = maze[r];
     let cols = row.split("");
@@ -61,12 +66,29 @@ window.addEventListener("DOMContentLoaded",function() {
        in the maze.  Create an instance of the corresponding object.
     */
   }
-  for(let i = 0; i < 100; i++){
-    let x = rnd(-150,150);
+  for(let i = 0; i < 150; i++){
+    let x = rnd(-150,200);
     let y = rnd(40, 70);
-    let z = rnd(-150,150);
+    let z = rnd(-150,200);
     let ufo = new UFO(x, y, z);
     ufos.push(ufo);
   }
-    scene = document.querySelector("a-scene");
+
+  for(let i = 0; i < 25; i++){
+    let x = rnd(-150,200);
+    let y = rnd(40, 70);
+    let z = rnd(-150, 200);
+    let mech = new Mech(x, y, z);
+    mechs.push(mech);
+  }
+  loop();
+
+function loop(){
+  for(let m of mechs){
+    m.launch();
+  }
+  window.requestAnimationFrame( loop );
+}
+
+scene = document.querySelector("a-scene");
 })
