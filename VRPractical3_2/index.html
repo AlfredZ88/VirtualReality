@@ -9,6 +9,48 @@
         <a-plane color="brown" position="0 0 -5" rotation="-90 0 0" width="50" height="50"></a-plane>
         <a-sky color="blue"></a-sky>
 
+        <a-entity id="car" interact width="15" height="5" depth="5.5" position="-15 1 0">
+      <!-- Body --> 
+        <a-box src="rustedMetal.jpg" interact height="1.2" width="6" depth="3" position="0 .35 0"></a-box>
+        <!-- Front -->
+         <a-box src="rustedMetal.jpg" depth="3" height="2.5" width="2.2" position="3.65 1 0"> </a-box>
+         <a-box src="rustedMetal.jpg" rotation="45 90 0" position="4.43 .89 0" depth="1.47" width="3" height="2.37"> </a-box>
+         <a-box src="rustedMetal.jpg" position="5.21 .465 0" depth="3" height="1.5" width="1.15"> </a-box>
+         <a-box src="rustedMetal.jpg" position="4.38 1.2 1.7" width="1.37" height="1.8" depth=".1" rotation="0 45 0"></a-box>
+         <a-box color="black" position="4.13 1.2 2.04" width=".4" height=".2" depth=".1" rotation="0 45 0"></a-box>
+         <a-box src="rustedMetal.jpg" position="4 1.2 -1.5" width="1.37" height="1.8" depth=".1" rotation="0 0 0"></a-box>
+         <a-box color="black" position="3.6 1.2 -1.55" width=".4" height=".2" depth=".1" rotation="0 0 0"></a-box>
+        <!-- Front Design -->
+         <a-plane src="glass.jpeg" position="5.2 1.8 0" width="2.8" rotation="135 90 0" material="side: double"> </a-plane>
+         <a-plane src="grills.jpg" position="5.787 .15 0" rotation="0 90 0" width="1.8" height=".5"> </a-plane>
+         <a-plane color="yellow" rotation="0 90 0" position="5.787 .8 -1.2" height=".35" width=".5"></a-plane>
+         <a-plane color="yellow" rotation="0 90 0" position="5.787 .8 1.2" height=".35" width=".5"></a-plane>
+         <a-plane src="licenseplate.png" position="5.79 .1 .5" rotation="0 90 0" height=".3" width=".55"></a-plane>
+         <a-plane src="glass.jpeg" position="2.545 1.8 0" width="2.8" height=".75" rotation="180 90 0"></a-plane>
+         <a-plane src="glass.jpeg" position="4.28 1.67 1.88" width=".9" height=".65" rotation="0 45 0"></a-plane>
+         <a-plane src="glass.jpeg" position="4 1.7 -1.56" width="1.19" height=".7" rotation="0 180 0"></a-plane>
+        <!-- Front Tires -->
+        <a-cylinder color="#000000" position="4 -.2999 1.009" rotation="90 0 0" depth=".1" radius=".75"></a-cylinder>
+        <a-circle  src="tire.jpg" position="4 -.3 1.52" radius=".75"> </a-circle>
+        <a-cylinder color="#000000" position="4 -.2999 -1.009" rotation="90 0 0" depth=".1" radius=".75"></a-cylinder>
+        <a-circle  src="tire.jpg" position="4 -.3 -1.5166" radius=".75" rotation="180 0 0"> </a-circle>
+        <!-- Back Design -->
+        <a-plane color="yellow" rotation="0 -90 0" position="-3.01 .6 -1.2" height=".35" width=".5"></a-plane>
+        <a-plane color="yellow" rotation="0 -90 0" position="-3.01 .6 1.2" height=".35" width=".5"></a-plane>
+        <a-plane src="licenseplate.png" position="-3.01 .1 .5" rotation="0 -90 0" height=".3" width=".55"></a-plane>
+        <!-- Back Tires -->
+        <a-cylinder color="#000000" position="-1.9 -.2999 -1.009" rotation="90 0 0" depth=".1" radius=".75"></a-cylinder>
+        <a-circle  src="tire.jpg" position="-1.91 -.3 -1.5166" radius=".75" rotation="180 0 0"> </a-circle>
+        <a-cylinder color="#000000" position="-1.9 -.2999 1.009" rotation="90 0 0" depth=".1" radius=".75"></a-cylinder>
+        <a-circle  src="tire.jpg" position="-1.9 -.3 1.52" radius=".75"> </a-circle>
+    </a-entity>
+
+        <a-entity interact id="UFO" position="0 10 0">
+          <a-torus interact position="0 0 0" color="gray" rotation="90 0 0" height="2"></a-torus>
+          <a-sphere position="0 .4 0" color="#39FF14" radius=".85"></a-sphere>
+          <a-cone color="green" opacity=".7" height="2.2" radius-bottom="1.2"></a-cone>
+        </a-entity>
+
         <a-camera position="0 2 0">
           <a-cursor raycaster="objects: [interact]"></a-cursor>
         </a-camera>
