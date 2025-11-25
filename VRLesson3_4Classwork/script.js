@@ -1,5 +1,5 @@
 let rnd = (l,u) => Math.floor(Math.random()*(u-l) + l);
-let time_text, balls = [], t = 60;
+let time_text, balls = [], t = 60, score, s = 0;
 
 /* Challenge 3
    Create a variable to store score and set it to 0. 
@@ -11,6 +11,7 @@ let time_text, balls = [], t = 60;
 window.addEventListener("DOMContentLoaded",function() {
   scene = document.querySelector("a-scene");
   time_text = document.getElementById("time");
+  score = this.document.getElementById("score");
   // Challenge 4: Assign the variable to the <a-text> for displaying the score
 
   for(let i = 0;i < 10; i++){
@@ -32,7 +33,7 @@ function countdown(){
 
 function loop(){
   // Challenge 5:  Display the score in the HUD
-  
+  score.setAttribute("value",`Score: ${s}` );
   for(let ball of balls){
     ball.move();
   }
